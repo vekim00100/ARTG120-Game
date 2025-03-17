@@ -97,6 +97,7 @@ material = SubResource("StandardMaterial3D_nyyfm")
 [node name="flames" type="GPUParticles3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.224359, 0)
 amount = 16
+preprocess = 2.0
 process_material = SubResource("ParticleProcessMaterial_ra4aq")
 draw_pass_1 = SubResource("QuadMesh_d76gw")
 
@@ -104,6 +105,7 @@ draw_pass_1 = SubResource("QuadMesh_d76gw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.224359, 0)
 amount = 16
 lifetime = 2.0
+preprocess = 2.0
 speed_scale = 0.66
 process_material = SubResource("ParticleProcessMaterial_vneyv")
 draw_pass_1 = SubResource("QuadMesh_buye6")
