@@ -1,7 +1,7 @@
 [gd_resource type="Terrain3DAssets" load_steps=9 format=3 uid="uid://dal3jhw6241qg"]
 
-[ext_resource type="Texture2D" path="res://rock030_alb_ht.dds" id="1_tt36x"]
-[ext_resource type="Texture2D" uid="uid://cn00w4htlf4ho" path="res://rock030_nrm_rgh.png" id="2_u7qws"]
+[ext_resource type="Texture2D" path="res://assets/Textures/rock030_alb_ht.dds" id="1_i4e0g"]
+[ext_resource type="Texture2D" uid="uid://cn00w4htlf4ho" path="res://assets/Textures/rock030_nrm_rgh.png" id="2_6xj7h"]
 [ext_resource type="Texture2D" uid="uid://ddprscrpsofah" path="res://demo/assets/textures/ground037_alb_ht.png" id="3_g8f2m"]
 [ext_resource type="Texture2D" uid="uid://c1ots7w6i0i1q" path="res://demo/assets/textures/ground037_nrm_rgh.png" id="4_aw5y1"]
 
@@ -22,14 +22,14 @@ generated_type = 1
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_od0q7"]
 name = "rock030_alb_ht"
-albedo_color = Color(0.97, 0.91956, 0.8536, 1)
-albedo_texture = ExtResource("1_tt36x")
-normal_texture = ExtResource("2_u7qws")
+albedo_color = Color(0.7, 0.65695, 0.637, 1)
+albedo_texture = ExtResource("1_i4e0g")
+normal_texture = ExtResource("2_6xj7h")
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_juk8q"]
 name = ""
 id = 1
-albedo_color = Color(0.4661, 0.59, 0.4661, 1)
+albedo_color = Color(0.3002, 0.38, 0.3002, 1)
 albedo_texture = ExtResource("3_g8f2m")
 normal_texture = ExtResource("4_aw5y1")
 

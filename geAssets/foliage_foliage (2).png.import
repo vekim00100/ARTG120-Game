@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn00w4htlf4ho"
-path.s3tc="res://.godot/imported/rock030_nrm_rgh.png-4401f5e635010245a434ec3c10f63868.s3tc.ctex"
+uid="uid://or561kd0aap8"
+path.s3tc="res://.godot/imported/foliage_foliage (2).png-001bd44574f3614c39e55be0eab807b5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "d804cc78e84e2b6391f3a9eb1367dc04"
+}
 
 [deps]
 
-source_file="res://rock030_nrm_rgh.png"
-dest_files=["res://.godot/imported/rock030_nrm_rgh.png-4401f5e635010245a434ec3c10f63868.s3tc.ctex"]
+source_file="res://geAssets/foliage_foliage (2).png"
+dest_files=["res://.godot/imported/foliage_foliage (2).png-001bd44574f3614c39e55be0eab807b5.s3tc.ctex"]
 
 [params]
 
@@ -20,7 +23,7 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=2
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
