@@ -21,3 +21,7 @@ shape = SubResource("ConvexPolygonShape3D_2p6ni")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.526417, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D"]
+spot_range = 15.0
+spot_angle = 30.0
