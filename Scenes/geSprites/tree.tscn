@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=4 uid="uid://b6irwed865fct"]
 
-[ext_resource type="PackedScene" uid="uid://bfhjasdof61jx" path="res://geAssets/tree.glb" id="1_eph45"]
-[ext_resource type="Texture2D" uid="uid://d1b6njhqmvcsm" path="res://geAssets/tree_bark.png" id="2_lq8jd"]
-[ext_resource type="Texture2D" uid="uid://d2y7g7u7x6rjt" path="res://geAssets/tree_pine_needles.png" id="3_umcfc"]
+[ext_resource type="PackedScene" uid="uid://bfhjasdof61jx" path="res://assets/geAssets/tree.glb" id="1_eph45"]
+[ext_resource type="Texture2D" uid="uid://d1b6njhqmvcsm" path="res://assets/geAssets/tree_bark.png" id="2_lq8jd"]
+[ext_resource type="Texture2D" uid="uid://d2y7g7u7x6rjt" path="res://assets/geAssets/tree_pine_needles.png" id="3_umcfc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6q3a7"]
 resource_name = "bark"

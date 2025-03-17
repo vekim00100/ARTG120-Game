@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b6ok73i212ohp"
-path="res://.godot/imported/campfire.glb-78ecfaf8a9a446e6b42933de952a3ce9.scn"
+uid="uid://bfhjasdof61jx"
+path="res://.godot/imported/tree.glb-c386038273937af70956f17e1e355eb2.scn"
 
 [deps]
 
-source_file="res://geAssets/campfire.glb"
-dest_files=["res://.godot/imported/campfire.glb-78ecfaf8a9a446e6b42933de952a3ce9.scn"]
+source_file="res://assets/geAssets/tree.glb"
+dest_files=["res://.godot/imported/tree.glb-c386038273937af70956f17e1e355eb2.scn"]
 
 [params]
 

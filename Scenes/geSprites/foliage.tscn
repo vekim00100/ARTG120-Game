@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=4 uid="uid://dko5oc4urvph"]
 
-[ext_resource type="PackedScene" uid="uid://cg8iyeq7h0oi" path="res://geAssets/foliage.glb" id="1_v86bd"]
-[ext_resource type="Texture2D" uid="uid://coy41ttt3go6j" path="res://geAssets/foliage_foliage.png" id="2_ggy5n"]
+[ext_resource type="PackedScene" uid="uid://cg8iyeq7h0oi" path="res://assets/geAssets/foliage.glb" id="1_v86bd"]
+[ext_resource type="Texture2D" uid="uid://coy41ttt3go6j" path="res://assets/geAssets/foliage_foliage.png" id="2_ggy5n"]
 
 [sub_resource type="Shader" id="Shader_5x1dx"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.3.stable's StandardMaterial3D.
