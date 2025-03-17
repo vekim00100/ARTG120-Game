@@ -1,157 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxcflbwo5nw4r"]
+[gd_scene load_steps=4 format=3 uid="uid://bxcflbwo5nw4r"]
 
-[sub_resource type="GDScript" id="GDScript_7yqfq"]
-script/source = "extends CharacterBody3D
+[ext_resource type="Script" path="res://player.gd" id="1_3qfcn"]
 
-@export var MOVE_SPEED: float = 50.0
-@export var JUMP_SPEED: float = 2.0
-@export var first_person: bool = false : 
-	set(p_value):
-		first_person = p_value
-		if first_person:
-			var tween: Tween = create_tween()
-			tween.tween_property($CameraManager/Arm, \"spring_length\", 0.0, .33)
-			tween.tween_callback($Body.set_visible.bind(false))
-		else:
-			$Body.visible = true
-			create_tween().tween_property($CameraManager/Arm, \"spring_length\", 6.0, .33)
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4qeck"]
 
-@export var gravity_enabled: bool = true :
-	set(p_value):
-		gravity_enabled = p_value
-		if not gravity_enabled:
-			velocity.y = 0
-			
-@export var collision_enabled: bool = true :
-	set(p_value):
-		collision_enabled = p_value
-		$CollisionShapeBody.disabled = ! collision_enabled
-		$CollisionShapeRay.disabled = ! collision_enabled
-
-
-func _physics_process(p_delta) -> void:
-	var direction: Vector3 = get_camera_relative_input()
-	var h_veloc: Vector2 = Vector2(direction.x, direction.z) * MOVE_SPEED
-	if Input.is_key_pressed(KEY_SHIFT):
-		h_veloc *= 2
-	velocity.x = h_veloc.x
-	velocity.z = h_veloc.y
-	if gravity_enabled:
-		velocity.y -= 40 * p_delta
-	move_and_slide()
-
-
-# Returns the input vector relative to the camera. Forward is always the direction the camera is facing
-func get_camera_relative_input() -> Vector3:
-	var input_dir: Vector3 = Vector3.ZERO
-	if Input.is_key_pressed(KEY_A): # Left
-		input_dir -= %Camera3D.global_transform.basis.x
-	if Input.is_key_pressed(KEY_D): # Right
-		input_dir += %Camera3D.global_transform.basis.x
-	if Input.is_key_pressed(KEY_W): # Forward
-		input_dir -= %Camera3D.global_transform.basis.z
-	if Input.is_key_pressed(KEY_S): # Backward
-		input_dir += %Camera3D.global_transform.basis.z
-	if Input.is_key_pressed(KEY_E) or Input.is_key_pressed(KEY_SPACE): # Up
-		velocity.y += JUMP_SPEED + MOVE_SPEED*.016
-	if Input.is_key_pressed(KEY_Q): # Down
-		velocity.y -= JUMP_SPEED + MOVE_SPEED*.016
-	if Input.is_key_pressed(KEY_KP_ADD) or Input.is_key_pressed(KEY_EQUAL):
-		MOVE_SPEED = clamp(MOVE_SPEED + .5, 5, 9999)
-	if Input.is_key_pressed(KEY_KP_SUBTRACT) or Input.is_key_pressed(KEY_MINUS):
-		MOVE_SPEED = clamp(MOVE_SPEED - .5, 5, 9999)
-	return input_dir		
-
-
-func _input(p_event: InputEvent) -> void:
-	if p_event is InputEventMouseButton and p_event.pressed:
-		if p_event.button_index == MOUSE_BUTTON_WHEEL_UP:
-			MOVE_SPEED = clamp(MOVE_SPEED + 5, 5, 9999)
-		elif p_event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			MOVE_SPEED = clamp(MOVE_SPEED - 5, 5, 9999)
-	
-	elif p_event is InputEventKey:
-		if p_event.pressed:
-			if p_event.keycode == KEY_V:
-				first_person = ! first_person
-			elif p_event.keycode == KEY_G:
-				gravity_enabled = ! gravity_enabled
-			elif p_event.keycode == KEY_C:
-				collision_enabled = ! collision_enabled
-
-		# Else if up/down released
-		elif p_event.keycode in [ KEY_Q, KEY_E, KEY_SPACE ]:
-			velocity.y = 0
-"
-
-[sub_resource type="GDScript" id="GDScript_y3274"]
-script/source = "extends Node3D
-
-const CAMERA_MAX_PITCH: float = deg_to_rad(70)
-const CAMERA_MIN_PITCH: float = deg_to_rad(-89.9)
-const CAMERA_RATIO: float = .625
-
-@export var mouse_sensitivity: float = .002
-@export var mouse_y_inversion: float = -1.0
-
-@onready var _camera_yaw: Node3D = self
-@onready var _camera_pitch: Node3D = %Arm
-
-
-func _ready() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
-
-func _input(p_event: InputEvent) -> void:
-	if p_event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		rotate_camera(p_event.relative)
-		get_viewport().set_input_as_handled()
-		return
-
-
-func rotate_camera(p_relative:Vector2) -> void:
-	_camera_yaw.rotation.y -= p_relative.x * mouse_sensitivity
-	_camera_yaw.orthonormalize()
-	_camera_pitch.rotation.x += p_relative.y * mouse_sensitivity * CAMERA_RATIO * mouse_y_inversion 
-	_camera_pitch.rotation.x = clamp(_camera_pitch.rotation.x, CAMERA_MIN_PITCH, CAMERA_MAX_PITCH)
-"
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_smq6u"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lwhhq"]
-height = 1.5
-
-[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_twc2s"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_lsqiy"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2p6ni"]
+points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607, 0.498884, 0.169713, 0.559144, 0.464172, 0.231051, -0.803591, 0.320455, 0.40741, 0.651043, -0.243523, -0.482789, 0.594843, 0.0822132, -0.362868, -0.682312, 0.289697, 0.469044, -0.654529, -0.0662713, -0.127444, 0.842701, -0.338103, -0.393435, -0.683942, -0.244717, 0.438255, 0.623309, 0.200849, 0.0841477, 0.977454, 0.114795, -0.0682023, -0.976458, -0.12927, 0.20055, -0.563129, -0.451454, -0.185527, 0.595453, -0.453475, -0.273363, 0.592268, 0.407754, -0.00693649, -0.476823, 0.49966, 0.375821, -0.588614, 0.316955, 0.111579, 0.563059, -0.481177, -0.41725, 0.527866, -0.270497, -0.484546, -0.596972, -0.0665097, -0.279747, 0.908561, 0.0533361, -0.250197, -0.880712, 0.205319, 0.263647, -0.902771, -0.127394, 0.293368, 0.871526, -0.157196, 0.373412, -0.526319, -0.328246, 0.499663, 0.476641, -0.00688856, 0.0531056, 0.875001, 0.324703, -0.154543, -0.590854, 0.465879, -0.0972799, -0.782358, -0.398188, -0.387649, -0.498171, 0.31565, -0.30068, -0.587995, -0.388901)
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
-script = SubResource("GDScript_7yqfq")
+script = ExtResource("1_3qfcn")
 
-[node name="CameraManager" type="Node3D" parent="."]
-script = SubResource("GDScript_y3274")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_4qeck")
 
-[node name="Arm" type="SpringArm3D" parent="CameraManager"]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 2.32515, -0.0321627)
-shape = SubResource("SphereShape3D_smq6u")
-spring_length = 6.0
-margin = 0.5
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_2p6ni")
 
-[node name="Camera3D" type="Camera3D" parent="CameraManager/Arm"]
-unique_name_in_owner = true
-near = 0.25
-far = 16384.0
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.526417, 0)
 
-[node name="CollisionShapeBody" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
-shape = SubResource("CapsuleShape3D_lwhhq")
-
-[node name="CollisionShapeRay" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
-shape = SubResource("SeparationRayShape3D_twc2s")
-
-[node name="Body" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_lsqiy")
+[node name="Camera3D" type="Camera3D" parent="Head"]
