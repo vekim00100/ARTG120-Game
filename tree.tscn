@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://b6irwed865fct"]
+[gd_scene load_steps=12 format=4 uid="uid://b6irwed865fct"]
 
 [ext_resource type="PackedScene" uid="uid://bfhjasdof61jx" path="res://geAssets/tree.glb" id="1_eph45"]
 [ext_resource type="Texture2D" uid="uid://d1b6njhqmvcsm" path="res://geAssets/tree_bark.png" id="2_lq8jd"]
@@ -152,7 +152,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_la8cr")
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_30a7f"]
+
 [node name="tree2" instance=ExtResource("1_eph45")]
 
 [node name="tree" parent="." index="0"]
 mesh = SubResource("ArrayMesh_gvek4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01055, 0)
+shape = SubResource("CylinderShape3D_30a7f")
