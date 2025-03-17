@@ -1,14 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://7vlfrmmpq4sf"]
+[gd_scene load_steps=10 format=3 uid="uid://7vlfrmmpq4sf"]
 
+[ext_resource type="PackedScene" uid="uid://bxcflbwo5nw4r" path="res://Player.tscn" id="1_idjt4"]
 [ext_resource type="Texture2D" uid="uid://dk1dpbl813ewq" path="res://geAssets/ground.png" id="1_vl1sw"]
 [ext_resource type="Texture2D" uid="uid://buingwmrqth0e" path="res://geAssets/ground_n.png" id="2_w4n1l"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j7jyi"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ac1r0"]
+[ext_resource type="MeshLibrary" uid="uid://cfo7cscb2a7dc" path="res://tree_mesh.tres" id="3_icbfq"]
+[ext_resource type="MeshLibrary" uid="uid://gu66r54xon86" path="res://foliage_mesh.tres" id="4_80hus"]
+[ext_resource type="PackedScene" uid="uid://coxg6k3qj3wmg" path="res://campfire.tscn" id="5_x6xhs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gxvo3"]
 albedo_texture = ExtResource("1_vl1sw")
+metallic_specular = 0.0
 normal_enabled = true
 normal_texture = ExtResource("2_w4n1l")
 uv1_scale = Vector3(50, 50, 50)
@@ -24,14 +25,8 @@ data = PackedVector3Array(50, 0, 50, 49.0099, 0, 50, 50, 0, -50, 49.0099, 0, 50,
 
 [node name="World" type="Node"]
 
-[node name="Player Placeholder" type="CharacterBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player Placeholder"]
-shape = SubResource("CapsuleShape3D_j7jyi")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player Placeholder"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.888617, 0)
-mesh = SubResource("CapsuleMesh_ac1r0")
+[node name="Player Placeholder" parent="." instance=ExtResource("1_idjt4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2534, 0, 0.0819621)
 
 [node name="Ground" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_s1wag")
@@ -40,3 +35,22 @@ mesh = SubResource("PlaneMesh_s1wag")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_jh7jf")
+
+[node name="Trees" type="GridMap" parent="."]
+mesh_library = ExtResource("3_icbfq")
+cell_size = Vector3(1, 2, 1)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(65532, 65528, 0, 1, 65524, 0, 8, 65528, 0, 65531, 5, 0, 6, 4, 0, 9, 65534, 0, 65527, 65532, 0, 65522, 9, 0, 65525, 13, 0, 65530, 14, 0, 65534, 14, 0, 3, 14, 0, 65521, 3, 0, 65518, 65532, 0, 65521, 65522, 0, 65532, 65517, 0, 7, 65517, 0, 14, 65522, 0, 16, 65526, 0, 21, 65531, 0, 19, 3, 0, 13, 10, 0, 9, 12, 0, 17, 8, 0, 15, 4, 0, 23, 65535, 0, 16, 65534, 0, 20, 65527, 0, 15, 65530, 0, 12, 65519, 0, 10, 65522, 0, 12, 65527, 0, 3, 65515, 0, 4, 65520, 0, 7, 65523, 0, 65535, 65514, 0, 0, 65520, 0, 65527, 65517, 0, 65532, 65521, 0, 65524, 65520, 0, 65527, 65522, 0, 65529, 65523, 0, 65523, 65524, 0, 65526, 65527, 0, 65519, 65526, 0, 65523, 65528, 0, 65521, 65531, 0, 65522, 65534, 0, 65517, 0, 0, 65524, 2, 0, 65524, 8, 0)
+}
+
+[node name="Foliage" type="GridMap" parent="."]
+mesh_library = ExtResource("4_80hus")
+cell_size = Vector3(0.5, 2, 0.5)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(7, 65527, 0, 7, 65528, 0, 9, 65528, 0, 9, 13, 0, 1, 20, 0, 65530, 19, 0, 5, 18, 0, 65521, 3, 0, 65525, 65530, 0, 65530, 65530, 0, 65533, 65525, 0, 4, 65525, 0, 9, 2, 0, 2, 10, 0, 15, 19, 0, 26, 3, 0, 8, 65521, 0, 1, 65519, 0, 14, 65526, 0, 65517, 6, 0, 65525, 5, 0, 65521, 65534, 0, 65525, 23, 0, 65531, 23, 0)
+}
+
+[node name="campfire" parent="." instance=ExtResource("5_x6xhs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0175772, -4.76837e-07, -0.00851917)
