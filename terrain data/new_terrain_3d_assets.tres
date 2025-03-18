@@ -1,4 +1,7 @@
-[gd_resource type="Terrain3DAssets" load_steps=3 format=3 uid="uid://b16m1k8lq010u"]
+[gd_resource type="Terrain3DAssets" load_steps=6 format=3 uid="uid://b16m1k8lq010u"]
+
+[ext_resource type="Texture2D" uid="uid://bmknvpo2fp1yg" path="res://assets/Textures/forrest_ground_01_diff_4k.jpg" id="1_s41wy"]
+[ext_resource type="Texture2D" uid="uid://cwfghl07rktom" path="res://assets/Textures/forrest_ground_01_disp_4k.png" id="2_6i0a8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j3wpf"]
 transparency = 4
@@ -14,5 +17,12 @@ distance_fade_max_distance = 75.0
 material_override = SubResource("StandardMaterial3D_j3wpf")
 generated_type = 1
 
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_c2wqv"]
+name = "forrest_ground_01_diff_4k"
+albedo_texture = ExtResource("1_s41wy")
+normal_texture = ExtResource("2_6i0a8")
+uv_scale = 0.3
+
 [resource]
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_aeasr")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_c2wqv")])

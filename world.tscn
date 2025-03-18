@@ -86,7 +86,6 @@ data = {
 
 [node name="campfire" parent="." instance=ExtResource("5_x6xhs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0175772, -4.76837e-07, -0.00851917)
-visible = false
 
 [node name="OmniLight3D" type="OmniLight3D" parent="campfire"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.707409, 0)
