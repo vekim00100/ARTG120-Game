@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2y7g7u7x6rjt"
-path.s3tc="res://.godot/imported/tree_pine_needles.png-70cfc5062b7418514112004325c4dd87.s3tc.ctex"
+path.s3tc="res://.godot/imported/tree_pine_needles.png-cb1cca18f7d61866480f6cc51cdac2b5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/geAssets/tree_pine_needles.png"
-dest_files=["res://.godot/imported/tree_pine_needles.png-70cfc5062b7418514112004325c4dd87.s3tc.ctex"]
+source_file="res://Assets/geAssets/tree_pine_needles.png"
+dest_files=["res://.godot/imported/tree_pine_needles.png-cb1cca18f7d61866480f6cc51cdac2b5.s3tc.ctex"]
 
 [params]
 

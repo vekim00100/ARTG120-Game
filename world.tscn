@@ -1,9 +1,9 @@
 [gd_scene load_steps=14 format=3 uid="uid://7vlfrmmpq4sf"]
 
-[ext_resource type="Texture2D" uid="uid://c1ocgf237ca7a" path="res://assets/geAssets/sky.png" id="1_1q5yy"]
+[ext_resource type="Texture2D" uid="uid://c1ocgf237ca7a" path="res://Assets/geAssets/sky.png" id="1_1q5yy"]
 [ext_resource type="PackedScene" uid="uid://bxcflbwo5nw4r" path="res://Scenes/geSprites/Player.tscn" id="1_idjt4"]
-[ext_resource type="Texture2D" uid="uid://dk1dpbl813ewq" path="res://assets/Textures/ground.png" id="1_vl1sw"]
-[ext_resource type="Texture2D" uid="uid://buingwmrqth0e" path="res://assets/Textures/ground_n.png" id="2_w4n1l"]
+[ext_resource type="Texture2D" uid="uid://dk1dpbl813ewq" path="res://Assets/Textures/ground.png" id="1_vl1sw"]
+[ext_resource type="Texture2D" uid="uid://buingwmrqth0e" path="res://Assets/Textures/ground_n.png" id="2_w4n1l"]
 [ext_resource type="MeshLibrary" uid="uid://cfo7cscb2a7dc" path="res://Scenes/geSprites/tree_mesh.tres" id="3_icbfq"]
 [ext_resource type="MeshLibrary" uid="uid://gu66r54xon86" path="res://Scenes/geSprites/foliage_mesh.tres" id="4_80hus"]
 [ext_resource type="PackedScene" uid="uid://coxg6k3qj3wmg" path="res://Scenes/geSprites/campfire.tscn" id="5_x6xhs"]
@@ -46,7 +46,7 @@ data = PackedVector3Array(50, 0, 50, 49.0099, 0, 50, 50, 0, -50, 49.0099, 0, 50,
 environment = SubResource("Environment_tqucs")
 
 [node name="Player Placeholder" parent="." instance=ExtResource("1_idjt4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2534, 0, 0.0819621)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.2534, 1.20649, 0.0819621)
 
 [node name="Ground" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_s1wag")

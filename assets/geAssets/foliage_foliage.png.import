@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://coy41ttt3go6j"
-path.s3tc="res://.godot/imported/foliage_foliage.png-ebe707e4929cb292a861cdaace6e7b26.s3tc.ctex"
+path.s3tc="res://.godot/imported/foliage_foliage.png-86ebd9f599fc4f5d0737b0bdf15c5d19.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/geAssets/foliage_foliage.png"
-dest_files=["res://.godot/imported/foliage_foliage.png-ebe707e4929cb292a861cdaace6e7b26.s3tc.ctex"]
+source_file="res://Assets/geAssets/foliage_foliage.png"
+dest_files=["res://.godot/imported/foliage_foliage.png-86ebd9f599fc4f5d0737b0bdf15c5d19.s3tc.ctex"]
 
 [params]
 
