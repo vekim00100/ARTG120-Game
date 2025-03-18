@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://7vlfrmmpq4sf"]
+[gd_scene load_steps=18 format=3 uid="uid://7vlfrmmpq4sf"]
 
 [ext_resource type="Texture2D" uid="uid://c1ocgf237ca7a" path="res://assets/geAssets/sky.png" id="1_1q5yy"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cvg7gnirei02g" path="res://terrain data/new_terrain_3d_material.tres" id="1_2byxp"]
@@ -8,7 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://buingwmrqth0e" path="res://assets/Textures/ground_n.png" id="2_w4n1l"]
 [ext_resource type="MeshLibrary" uid="uid://cfo7cscb2a7dc" path="res://Scenes/geSprites/tree_mesh.tres" id="3_icbfq"]
 [ext_resource type="MeshLibrary" uid="uid://gu66r54xon86" path="res://Scenes/geSprites/foliage_mesh.tres" id="4_80hus"]
-[ext_resource type="PackedScene" uid="uid://coxg6k3qj3wmg" path="res://Scenes/geSprites/campfire.tscn" id="5_x6xhs"]
+[ext_resource type="PackedScene" uid="uid://coxg6k3qj3wmg" path="res://Scenes/campfire.tscn" id="5_x6xhs"]
+[ext_resource type="PackedScene" uid="uid://f30obpn86t1k" path="res://Scenes/geSprites/door.tscn" id="10_wm0e3"]
+[ext_resource type="PackedScene" uid="uid://n45etn15jn3r" path="res://Scenes/geSprites/stairs.tscn" id="11_7de7o"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xf15i"]
 panorama = ExtResource("1_1q5yy")
@@ -21,6 +23,7 @@ background_mode = 2
 sky = SubResource("Sky_mf6g2")
 tonemap_mode = 2
 glow_enabled = true
+fog_enabled = true
 fog_light_color = Color(0.163712, 0.181478, 0.209408, 1)
 fog_density = 0.04
 fog_sky_affect = 0.85
@@ -54,17 +57,7 @@ metadata/_edit_lock_ = true
 environment = SubResource("Environment_tqucs")
 
 [node name="Player Placeholder" parent="." instance=ExtResource("1_idjt4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2534, 1.37845, 0.0819621)
-
-[node name="Ground" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0189934, 0.0810318, -0.0768738)
-visible = false
-mesh = SubResource("PlaneMesh_s1wag")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Ground"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_jh7jf")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.9319, 6.31397, -32.8663)
 
 [node name="Trees" type="GridMap" parent="."]
 mesh_library = ExtResource("3_icbfq")
@@ -79,7 +72,7 @@ mesh_library = ExtResource("4_80hus")
 cell_size = Vector3(0.5, 2, 0.5)
 cell_center_y = false
 data = {
-"cells": PackedInt32Array(7, 65527, 0, 7, 65528, 0, 9, 65528, 0, 9, 13, 0, 1, 20, 0, 65530, 19, 0, 5, 18, 0, 65521, 3, 0, 65525, 65530, 0, 65530, 65530, 0, 65533, 65525, 0, 4, 65525, 0, 9, 2, 0, 2, 10, 0, 15, 19, 0, 26, 3, 0, 8, 65521, 0, 1, 65519, 0, 14, 65526, 0, 65517, 6, 0, 65525, 5, 0, 65521, 65534, 0, 65525, 23, 0, 65531, 23, 0, 6, 10, 0)
+"cells": PackedInt32Array(7, 65527, 0, 7, 65528, 0, 9, 65528, 0, 9, 13, 0, 1, 20, 0, 65530, 19, 0, 5, 18, 0, 65521, 3, 0, 65525, 65530, 0, 65530, 65530, 0, 65533, 65525, 0, 4, 65525, 0, 9, 2, 0, 2, 10, 0, 15, 19, 0, 26, 3, 0, 8, 65521, 0, 1, 65519, 0, 14, 65526, 0, 65517, 6, 0, 65525, 5, 0, 65521, 65534, 0, 65525, 23, 0, 65531, 23, 0, 6, 10, 0, 18, 65529, 0, 12, 65519, 0, 10, 65508, 0, 8, 65514, 0, 8, 65527, 0, 8, 65528, 0, 8, 65529, 0, 65524, 4, 0, 65524, 6, 0, 3, 13, 0, 65530, 10, 0, 8, 11, 0)
 }
 
 [node name="campfire" parent="." instance=ExtResource("5_x6xhs")]
@@ -89,3 +82,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0175772, -4.76837e-07, -0.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.707409, 0)
 light_color = Color(0.901961, 0.529412, 0.352941, 1)
 omni_range = 15.0
+
+[node name="campfire2" parent="." instance=ExtResource("5_x6xhs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.3694, 0.0830083, -33.9546)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="campfire2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.707409, 0)
+light_color = Color(0.901961, 0.529412, 0.352941, 1)
+omni_range = 15.0
+
+[node name="campfire3" parent="." instance=ExtResource("5_x6xhs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.2644, 0.0830083, -33.9546)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="campfire3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.707409, 0)
+light_color = Color(0.901961, 0.529412, 0.352941, 1)
+omni_range = 15.0
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0189934, 0.0810318, -0.0768738)
+visible = false
+mesh = SubResource("PlaneMesh_s1wag")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_jh7jf")
+
+[node name="crypt-door2" parent="." instance=ExtResource("10_wm0e3")]
+transform = Transform3D(0.363983, 9.30659e-10, -0.931406, -0.066431, 0.997453, -0.0259605, 0.929034, 0.0713234, 0.363056, 101.643, 8.05111, -45.6331)
+
+[node name="stairs-wood2" parent="." instance=ExtResource("11_7de7o")]
+transform = Transform3D(-0.371016, 0.000787922, 0.928626, 0.071224, 0.997078, 0.0276103, -0.925891, 0.0763843, -0.369988, 100.032, 3.05816, -44.1495)

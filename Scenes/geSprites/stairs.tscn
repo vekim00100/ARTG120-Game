@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://n45etn15jn3r"]
+
+[ext_resource type="PackedScene" uid="uid://v1ncf8dc0od3" path="res://assets/geAssets/stairs-wood.glb" id="1_8gsoi"]
+[ext_resource type="Texture2D" uid="uid://c34t1tlonjqq2" path="res://assets/Textures/worn_planks_diff_4k.jpg" id="2_0m4wc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_btxai"]
+albedo_texture = ExtResource("2_0m4wc")
+metallic = 0.56
+uv1_scale = Vector3(4, 4, 4)
+
+[node name="stairs-wood2" instance=ExtResource("1_8gsoi")]
+
+[node name="stairs-wood" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_btxai")
