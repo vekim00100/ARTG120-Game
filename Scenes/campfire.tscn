@@ -1,8 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://coxg6k3qj3wmg"]
+[gd_scene load_steps=18 format=3 uid="uid://dopgg30xff0kv"]
 
-[ext_resource type="PackedScene" uid="uid://b6ok73i212ohp" path="res://assets/geAssets/campfire.glb" id="1_ldw4g"]
-[ext_resource type="Texture2D" uid="uid://xhj4tj1gelif" path="res://assets/geAssets/fire.png" id="2_0d31v"]
-[ext_resource type="Texture2D" uid="uid://c1eetstcmy87m" path="res://assets/geAssets/smoke.png" id="3_ju17v"]
+[ext_resource type="PackedScene" uid="uid://b6ok73i212ohp" path="res://Assets/geAssets/campfire.glb" id="1_ldw4g"]
+[ext_resource type="Texture2D" uid="uid://xhj4tj1gelif" path="res://Assets/geAssets/fire.png" id="2_0d31v"]
+[ext_resource type="Texture2D" uid="uid://c1eetstcmy87m" path="res://Assets/geAssets/smoke.png" id="3_ju17v"]
 
 [sub_resource type="Gradient" id="Gradient_r0if4"]
 offsets = PackedFloat32Array(0, 0.53139)

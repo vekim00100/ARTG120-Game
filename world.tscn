@@ -1,16 +1,16 @@
 [gd_scene load_steps=18 format=3 uid="uid://7vlfrmmpq4sf"]
 
-[ext_resource type="Texture2D" uid="uid://c1ocgf237ca7a" path="res://assets/geAssets/sky.png" id="1_1q5yy"]
+[ext_resource type="Texture2D" uid="uid://c1ocgf237ca7a" path="res://Assets/geAssets/sky.png" id="1_1q5yy"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cvg7gnirei02g" path="res://terrain data/new_terrain_3d_material.tres" id="1_2byxp"]
 [ext_resource type="PackedScene" uid="uid://bxcflbwo5nw4r" path="res://Scenes/geSprites/Player.tscn" id="1_idjt4"]
-[ext_resource type="Texture2D" uid="uid://dk1dpbl813ewq" path="res://assets/Textures/ground.png" id="1_vl1sw"]
+[ext_resource type="Texture2D" uid="uid://dk1dpbl813ewq" path="res://Assets/Textures/ground.png" id="1_vl1sw"]
 [ext_resource type="Terrain3DAssets" uid="uid://b16m1k8lq010u" path="res://terrain data/new_terrain_3d_assets.tres" id="2_2nh8e"]
-[ext_resource type="Texture2D" uid="uid://buingwmrqth0e" path="res://assets/Textures/ground_n.png" id="2_w4n1l"]
+[ext_resource type="Texture2D" uid="uid://buingwmrqth0e" path="res://Assets/Textures/ground_n.png" id="2_w4n1l"]
 [ext_resource type="MeshLibrary" uid="uid://cfo7cscb2a7dc" path="res://Scenes/geSprites/tree_mesh.tres" id="3_icbfq"]
 [ext_resource type="MeshLibrary" uid="uid://gu66r54xon86" path="res://Scenes/geSprites/foliage_mesh.tres" id="4_80hus"]
-[ext_resource type="PackedScene" uid="uid://coxg6k3qj3wmg" path="res://Scenes/campfire.tscn" id="5_x6xhs"]
-[ext_resource type="PackedScene" uid="uid://f30obpn86t1k" path="res://Scenes/geSprites/door.tscn" id="10_wm0e3"]
-[ext_resource type="PackedScene" uid="uid://n45etn15jn3r" path="res://Scenes/geSprites/stairs.tscn" id="11_7de7o"]
+[ext_resource type="PackedScene" uid="uid://dopgg30xff0kv" path="res://Scenes/campfire.tscn" id="5_x6xhs"]
+[ext_resource type="PackedScene" path="res://Scenes/geSprites/door.tscn" id="10_wm0e3"]
+[ext_resource type="PackedScene" path="res://Scenes/geSprites/stairs.tscn" id="11_7de7o"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xf15i"]
 panorama = ExtResource("1_1q5yy")
