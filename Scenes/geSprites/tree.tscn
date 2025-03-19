@@ -160,8 +160,8 @@ height = 6.0
 [node name="tree" parent="." index="0"]
 mesh = SubResource("ArrayMesh_gvek4")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+[node name="StaticBody3D" type="StaticBody3D" parent="tree" index="0"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tree/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0716544, 3.02589, -0.0550458)
 shape = SubResource("CylinderShape3D_30a7f")
