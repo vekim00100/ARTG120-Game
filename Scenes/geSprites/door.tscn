@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://f30obpn86t1k"]
+[gd_scene load_steps=9 format=4 uid="uid://f30obpn86t1k"]
 
 [ext_resource type="PackedScene" uid="uid://vpnayvhs8uep" path="res://assets/geAssets/crypt-door.glb" id="1_y55gd"]
 [ext_resource type="Texture2D" uid="uid://c34t1tlonjqq2" path="res://assets/Textures/worn_planks_diff_4k.jpg" id="2_d7n6b"]
@@ -48,9 +48,17 @@ albedo_texture_force_srgb = true
 roughness_texture = ExtResource("2_d7n6b")
 uv1_scale = Vector3(3, 3, 3)
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sfb3w"]
+points = PackedVector3Array(0, 0, -0.05, 0.4, 0, -0.05, 0, 0, 0.05, 0, 0.8, -0.05, 0.4, 0, 0.05, 0.4, 0.8, -0.05, 0, 0.8, 0.05, 0.4, 0.8, 0.05)
+
 [node name="crypt-door2" instance=ExtResource("1_y55gd")]
 
 [node name="door" parent="crypt-door" index="0"]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -0.00203437, 0.0159322, -0.0106275)
 mesh = SubResource("ArrayMesh_u0n4h")
 surface_material_override/0 = SubResource("StandardMaterial3D_acok0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="crypt-door/door" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="crypt-door/door/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_sfb3w")

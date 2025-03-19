@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://vpnayvhs8uep"
-path="res://.godot/imported/crypt-door.glb-fdd61b81a4b51439cc02bf442a92f09e.scn"
+path="res://.godot/imported/crypt-door.glb-9b0c8796db97f3b3a3c71dc5a8ff34d7.scn"
 
 [deps]
 
-source_file="res://Assets/geAssets/crypt-door.glb"
-dest_files=["res://.godot/imported/crypt-door.glb-fdd61b81a4b51439cc02bf442a92f09e.scn"]
+source_file="res://assets/geAssets/crypt-door.glb"
+dest_files=["res://.godot/imported/crypt-door.glb-9b0c8796db97f3b3a3c71dc5a8ff34d7.scn"]
 
 [params]
 
