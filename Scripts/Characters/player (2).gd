@@ -1,6 +1,5 @@
 extends CharacterBody3D
 
-
 const SPEED = 10.0
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.004
@@ -12,15 +11,23 @@ var gravity = 9.8
 
 @onready var actionable_finder: Area3D = $Direction/ActionableFinder
 
+var mouse_look := Vector2.ZERO
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-func _unhandled_input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
-		var actionables = actionable_finder.get_overlapping_areas()
-		if actionables.size() > 0:
-					actionables[0].action()
-					return
+func _unhandled_input(event):
+	if event is InputEventMouseMotion:
+		head.rotate_y(-event.relative.x * SENSITIVITY)
+		camera.rotate_x(-event.relative.y * SENSITIVITY)
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
+
+#func _unhandled_input(event):
+ 	#if event is InputEventMouseMotion:
+ 		#head.rotate_y(-event.relative.x * SENSITIVITY)
+ 		#camera.rotate_x(-event.relative.y * SENSITIVITY)
+ 		#camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():

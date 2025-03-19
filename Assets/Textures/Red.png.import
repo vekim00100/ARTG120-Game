@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cutbjd0u33v4t"
-path.bptc="res://.godot/imported/Red.png-c8daf6fffa1175bab99cf1f9f4ca8e02.bptc.ctex"
+path.bptc="res://.godot/imported/Red.png-5ff191106ac285f3fbc589e500c5d6df.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/Red.png"
-dest_files=["res://.godot/imported/Red.png-c8daf6fffa1175bab99cf1f9f4ca8e02.bptc.ctex"]
+source_file="res://assets/Textures/Red.png"
+dest_files=["res://.godot/imported/Red.png-5ff191106ac285f3fbc589e500c5d6df.bptc.ctex"]
 
 [params]
 

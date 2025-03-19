@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b6ok73i212ohp"
-path="res://.godot/imported/campfire.glb-e78e50efd5971bb7d5928fdc5a064ce4.scn"
+path="res://.godot/imported/campfire.glb-d8aa5221e67835b74fcc80aa7404153c.scn"
 
 [deps]
 
-source_file="res://Assets/geAssets/campfire.glb"
-dest_files=["res://.godot/imported/campfire.glb-e78e50efd5971bb7d5928fdc5a064ce4.scn"]
+source_file="res://assets/geAssets/campfire.glb"
+dest_files=["res://.godot/imported/campfire.glb-d8aa5221e67835b74fcc80aa7404153c.scn"]
 
 [params]
 
