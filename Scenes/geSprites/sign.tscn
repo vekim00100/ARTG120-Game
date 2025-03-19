@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://drrqjr81in05b"]
+
+[ext_resource type="Texture2D" uid="uid://c34t1tlonjqq2" path="res://assets/Textures/worn_planks_diff_4k.jpg" id="1_3uf1g"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1mvti"]
+size = Vector3(1, 0.951416, 0.121582)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2wnr8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tpvgx"]
+albedo_texture = ExtResource("1_3uf1g")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qkp7k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q0w8k"]
+albedo_texture = ExtResource("1_3uf1g")
+
+[node name="sign" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1.04384, 0, 0, 0, 1, 0, 0.516782, 0.00317383)
+shape = SubResource("BoxShape3D_1mvti")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.970128, 0, 0, 0, 0.586201, 0, 0, 0, 0.114238, 0, 0.714228, 0)
+mesh = SubResource("BoxMesh_2wnr8")
+surface_material_override/0 = SubResource("StandardMaterial3D_tpvgx")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0998076, 0, 0, 0, 0.224989, 0, 0, 0, 0.0998076, 0, 0.235, 0)
+mesh = SubResource("CylinderMesh_qkp7k")
+surface_material_override/0 = SubResource("StandardMaterial3D_q0w8k")

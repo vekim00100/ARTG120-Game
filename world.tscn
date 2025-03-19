@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://7vlfrmmpq4sf"]
+[gd_scene load_steps=22 format=3 uid="uid://7vlfrmmpq4sf"]
 
 [ext_resource type="Texture2D" uid="uid://c1ocgf237ca7a" path="res://assets/geAssets/sky.png" id="1_1q5yy"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cvg7gnirei02g" path="res://terrain data/new_terrain_3d_material.tres" id="1_2byxp"]
@@ -15,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://do4ddqj7ufgb1" path="res://dialogue/location1.dialogue" id="11_gifa8"]
 [ext_resource type="Resource" uid="uid://cs26a4hcxb3t4" path="res://location2.dialogue" id="13_m2d3c"]
 [ext_resource type="AudioStream" uid="uid://c65ahcrm8a7pw" path="res://Audio-Manager-3D-14c58dbcacd7a45e3d33c677da18f20e9fb09769/addons/audio_manager_3d/10 Minutes of Spooky Forest Ambient Sounds [ ezmp3.co ].mp3" id="15_5x0gq"]
+[ext_resource type="PackedScene" uid="uid://drrqjr81in05b" path="res://Scenes/geSprites/sign.tscn" id="16_bvmwq"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xf15i"]
 panorama = ExtResource("1_1q5yy")
@@ -120,3 +121,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.3183, -37.3301, 12.2474)
 stream = ExtResource("15_5x0gq")
 volume_db = 1.524
 autoplay = true
+
+[node name="sign" parent="." instance=ExtResource("16_bvmwq")]
+transform = Transform3D(1.54839, 0, 0, 0, 1.54839, 0, 0, 0, 1.54839, -0.443904, 0.353581, 3.1325)
