@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bxcflbwo5nw4r"]
+[gd_scene load_steps=15 format=3 uid="uid://bxcflbwo5nw4r"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/player (2).gd" id="1_3qfcn"]
 [ext_resource type="Texture2D" uid="uid://bo0ba6ug4th6a" path="res://icon.svg" id="2_iffpi"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dpf0xvb5d22v8" path="res://Scenes/Characters/Artg120Player_Run1.png" id="7_sue4n"]
 [ext_resource type="Texture2D" uid="uid://y736jsvtfvrp" path="res://Scenes/Characters/Artg120Player_Run2.png" id="8_bcm7w"]
 [ext_resource type="Texture2D" uid="uid://d0pg5df3eglab" path="res://Scenes/Characters/Artg120Player_Run3.png" id="9_xn0ey"]
+[ext_resource type="Script" path="res://Scenes/geSprites/camera_3d.gd" id="10_5it4k"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_autsq"]
 size = Vector2(1.5, 1.5)
@@ -82,6 +83,7 @@ frame_progress = 0.0815297
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.18546, 0.14424, 1.69327)
+script = ExtResource("10_5it4k")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.938046, -0.565274, -2.04284)

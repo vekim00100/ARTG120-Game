@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c65ahcrm8a7pw"
+path="res://.godot/imported/10 Minutes of Spooky Forest Ambient Sounds [ ezmp3.co ].mp3-93e0e5e28ca4b12e779fa56af0f2c36e.mp3str"
+
+[deps]
+
+source_file="res://Audio-Manager-3D-14c58dbcacd7a45e3d33c677da18f20e9fb09769/addons/audio_manager_3d/10 Minutes of Spooky Forest Ambient Sounds [ ezmp3.co ].mp3"
+dest_files=["res://.godot/imported/10 Minutes of Spooky Forest Ambient Sounds [ ezmp3.co ].mp3-93e0e5e28ca4b12e779fa56af0f2c36e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

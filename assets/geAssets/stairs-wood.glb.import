@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://v1ncf8dc0od3"
-path="res://.godot/imported/stairs-wood.glb-7397a5da83ab100836e460bb462e2402.scn"
+path="res://.godot/imported/stairs-wood.glb-3f57e31aa8d1dbb9bbe3eba5115060e1.scn"
 
 [deps]
 
-source_file="res://assets/geAssets/stairs-wood.glb"
-dest_files=["res://.godot/imported/stairs-wood.glb-7397a5da83ab100836e460bb462e2402.scn"]
+source_file="res://Assets/geAssets/stairs-wood.glb"
+dest_files=["res://.godot/imported/stairs-wood.glb-3f57e31aa8d1dbb9bbe3eba5115060e1.scn"]
 
 [params]
 

@@ -1,15 +1,20 @@
-[gd_scene load_steps=14 format=3 uid="uid://7vlfrmmpq4sf"]
+[gd_scene load_steps=21 format=3 uid="uid://7vlfrmmpq4sf"]
 
-[ext_resource type="Texture2D" uid="uid://c1ocgf237ca7a" path="res://assets/geAssets/sky.png" id="1_1q5yy"]
+[ext_resource type="Texture2D" uid="uid://c1ocgf237ca7a" path="res://Assets/geAssets/sky.png" id="1_1q5yy"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cvg7gnirei02g" path="res://terrain data/new_terrain_3d_material.tres" id="1_2byxp"]
 [ext_resource type="PackedScene" uid="uid://bxcflbwo5nw4r" path="res://Scenes/geSprites/Player.tscn" id="1_idjt4"]
 [ext_resource type="Terrain3DAssets" uid="uid://b16m1k8lq010u" path="res://terrain data/new_terrain_3d_assets.tres" id="2_2nh8e"]
 [ext_resource type="MeshLibrary" uid="uid://gu66r54xon86" path="res://Scenes/geSprites/foliage_mesh.tres" id="4_80hus"]
 [ext_resource type="MeshLibrary" uid="uid://i3nvajndwdkq" path="res://Scenes/geSprites/tree_meshs.tres" id="5_aflda"]
 [ext_resource type="PackedScene" uid="uid://dopgg30xff0kv" path="res://Scenes/geSprites/campfire.tscn" id="5_x6xhs"]
+[ext_resource type="Resource" uid="uid://ntdi5cuv5nw8" path="res://location3.dialogue" id="9_tisj2"]
+[ext_resource type="PackedScene" uid="uid://w450akntyfnb" path="res://actionable_3d.tscn" id="10_pm12x"]
 [ext_resource type="PackedScene" uid="uid://bmp23taw1num7" path="res://Scenes/geSprites/knife.tscn" id="10_rj711"]
 [ext_resource type="PackedScene" uid="uid://f30obpn86t1k" path="res://Scenes/geSprites/door.tscn" id="10_wm0e3"]
 [ext_resource type="PackedScene" uid="uid://n45etn15jn3r" path="res://Scenes/geSprites/stairs.tscn" id="11_7de7o"]
+[ext_resource type="Resource" uid="uid://do4ddqj7ufgb1" path="res://dialogue/location1.dialogue" id="11_gifa8"]
+[ext_resource type="Resource" uid="uid://cs26a4hcxb3t4" path="res://location2.dialogue" id="13_m2d3c"]
+[ext_resource type="AudioStream" uid="uid://c65ahcrm8a7pw" path="res://Audio-Manager-3D-14c58dbcacd7a45e3d33c677da18f20e9fb09769/addons/audio_manager_3d/10 Minutes of Spooky Forest Ambient Sounds [ ezmp3.co ].mp3" id="15_5x0gq"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xf15i"]
 panorama = ExtResource("1_1q5yy")
@@ -27,6 +32,11 @@ fog_light_color = Color(0.163712, 0.181478, 0.209408, 1)
 fog_density = 0.04
 fog_sky_affect = 0.85
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_ededd"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4h0ip"]
+radius = 2.37
+
 [node name="World" type="Node"]
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
@@ -40,7 +50,18 @@ metadata/_edit_lock_ = true
 environment = SubResource("Environment_tqucs")
 
 [node name="Player Placeholder" parent="." instance=ExtResource("1_idjt4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62503, 1.55809, 0.113211)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6291, 1.56922, 0.105982)
+
+[node name="Direction" type="Marker3D" parent="Player Placeholder"]
+
+[node name="ActionableFinder" type="Area3D" parent="Player Placeholder/Direction"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00105906, -0.00828743, 0.00625968)
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player Placeholder/Direction/ActionableFinder"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+shape = SubResource("SphereShape3D_ededd")
 
 [node name="Trees" type="GridMap" parent="."]
 mesh_library = ExtResource("5_aflda")
@@ -62,14 +83,40 @@ data = {
 [node name="crypt-door2" parent="." instance=ExtResource("10_wm0e3")]
 transform = Transform3D(0.363983, 9.30659e-10, -0.931406, -0.066431, 0.997453, -0.0259605, 0.929034, 0.0713234, 0.363056, 101.643, 8.05111, -45.6331)
 
+[node name="Actionable3D" parent="crypt-door2" instance=ExtResource("10_pm12x")]
+dialogue_resource = ExtResource("9_tisj2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="crypt-door2/Actionable3D"]
+transform = Transform3D(1, 5.46967e-09, 0, 2.46993e-09, 1, 7.74737e-09, 1.49012e-07, 1.3677e-09, 1, 0.0336855, 0.999266, -0.0181902)
+shape = SubResource("SphereShape3D_4h0ip")
+
 [node name="stairs-wood2" parent="." instance=ExtResource("11_7de7o")]
 transform = Transform3D(-0.371016, 0.000787922, 0.928626, 0.071224, 0.997078, 0.0276103, -0.925891, 0.0763843, -0.369988, 100.032, 3.05816, -44.1495)
 
 [node name="campfire" parent="." instance=ExtResource("5_x6xhs")]
 transform = Transform3D(0.879261, -0.0382832, -0.4748, 0.0336856, 0.999267, -0.0181902, 0.475148, 0, 0.879906, 0.184341, 0.0463659, -0.523539)
 
+[node name="Actionable3D" parent="campfire" instance=ExtResource("10_pm12x")]
+dialogue_resource = ExtResource("11_gifa8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="campfire/Actionable3D"]
+transform = Transform3D(1, 5.46967e-09, 0, 2.46993e-09, 1, 7.74737e-09, 1.49012e-07, 1.3677e-09, 1, 0.0336855, 0.999266, -0.0181902)
+shape = SubResource("SphereShape3D_4h0ip")
+
 [node name="knife" parent="." instance=ExtResource("10_rj711")]
 transform = Transform3D(-0.884279, 0, -0.46227, 0, 0.997819, 0, 0.46227, 0, -0.884279, 50.6065, 0.190347, 54.9213)
 
+[node name="Actionable3D" parent="knife" instance=ExtResource("10_pm12x")]
+dialogue_resource = ExtResource("13_m2d3c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="knife/Actionable3D"]
+transform = Transform3D(1, 5.46967e-09, 0, 2.46993e-09, 1, 7.74737e-09, 1.49012e-07, 1.3677e-09, 1, 0.0336855, 0.999266, -0.0181902)
+shape = SubResource("SphereShape3D_4h0ip")
+
 [node name="campfire2" parent="." instance=ExtResource("5_x6xhs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.3183, -37.3301, 12.2474)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("15_5x0gq")
+volume_db = 1.524
+autoplay = true
