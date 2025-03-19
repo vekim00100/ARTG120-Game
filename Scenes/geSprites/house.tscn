@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://yoadrs4eiat6"]
+
+[ext_resource type="Texture2D" uid="uid://c34t1tlonjqq2" path="res://assets/Textures/worn_planks_diff_4k.jpg" id="1_1kaod"]
+[ext_resource type="Texture2D" uid="uid://bmknvpo2fp1yg" path="res://assets/Textures/forrest_ground_01_diff_4k.jpg" id="2_06y8j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4kp12"]
+size = Vector3(0.973145, 1, 6.84546)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2u6f0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iks7y"]
+albedo_texture = ExtResource("1_1kaod")
+albedo_texture_force_srgb = true
+uv1_scale = Vector3(15, 15, 15)
+
+[sub_resource type="PrismMesh" id="PrismMesh_b8mtf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_35iwi"]
+albedo_color = Color(0.13926, 0.220383, 0.0631325, 1)
+albedo_texture = ExtResource("2_06y8j")
+
+[node name="house" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(16.498, 0, 0, 0, 7.1561, 0, 0, 0, 1.68516, 0.221531, 0, -0.118114)
+shape = SubResource("BoxShape3D_4kp12")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(15.7129, 0, 0, 0, 7.57565, 0, 0, 0, 11.621, 0, 0, 0)
+mesh = SubResource("BoxMesh_2u6f0")
+surface_material_override/0 = SubResource("StandardMaterial3D_iks7y")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(17.5796, 0, 0, 0, 5.00279, 0, 0, 0, -13.5985, 0, 6.14407, 0)
+mesh = SubResource("PrismMesh_b8mtf")
+surface_material_override/0 = SubResource("StandardMaterial3D_35iwi")
