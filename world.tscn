@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://dk1dpbl813ewq" path="res://assets/Textures/ground.png" id="1_vl1sw"]
 [ext_resource type="Terrain3DAssets" uid="uid://b16m1k8lq010u" path="res://terrain data/new_terrain_3d_assets.tres" id="2_2nh8e"]
 [ext_resource type="Texture2D" uid="uid://buingwmrqth0e" path="res://assets/Textures/ground_n.png" id="2_w4n1l"]
+[ext_resource type="MeshLibrary" uid="uid://cfo7cscb2a7dc" path="res://Scenes/geSprites/tree_mesh.tres" id="3_icbfq"]
 [ext_resource type="MeshLibrary" uid="uid://gu66r54xon86" path="res://Scenes/geSprites/foliage_mesh.tres" id="4_80hus"]
 [ext_resource type="PackedScene" uid="uid://dopgg30xff0kv" path="res://Scenes/campfire.tscn" id="5_x6xhs"]
-[ext_resource type="MeshLibrary" uid="uid://c85qhmc5yjaq0" path="res://Scenes/geSprites/tree_mesh.tres" id="5_xolqh"]
 [ext_resource type="PackedScene" uid="uid://f30obpn86t1k" path="res://Scenes/geSprites/door.tscn" id="10_wm0e3"]
 [ext_resource type="PackedScene" uid="uid://n45etn15jn3r" path="res://Scenes/geSprites/stairs.tscn" id="11_7de7o"]
 
@@ -59,7 +59,7 @@ environment = SubResource("Environment_tqucs")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62503, 1.55809, 0.113211)
 
 [node name="Trees" type="GridMap" parent="."]
-mesh_library = ExtResource("5_xolqh")
+mesh_library = ExtResource("3_icbfq")
 cell_size = Vector3(1, 2, 1)
 cell_center_y = false
 data = {
