@@ -109,3 +109,8 @@ preprocess = 2.0
 speed_scale = 0.66
 process_material = SubResource("ParticleProcessMaterial_vneyv")
 draw_pass_1 = SubResource("QuadMesh_buye6")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.707409, 0)
+light_color = Color(0.901961, 0.529412, 0.352941, 1)
+omni_range = 15.0
