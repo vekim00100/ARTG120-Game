@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://7vlfrmmpq4sf"]
+[gd_scene load_steps=14 format=3 uid="uid://7vlfrmmpq4sf"]
 
 [ext_resource type="Texture2D" uid="uid://c1ocgf237ca7a" path="res://assets/geAssets/sky.png" id="1_1q5yy"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cvg7gnirei02g" path="res://terrain data/new_terrain_3d_material.tres" id="1_2byxp"]
@@ -7,6 +7,7 @@
 [ext_resource type="MeshLibrary" uid="uid://gu66r54xon86" path="res://Scenes/geSprites/foliage_mesh.tres" id="4_80hus"]
 [ext_resource type="MeshLibrary" uid="uid://i3nvajndwdkq" path="res://Scenes/geSprites/tree_meshs.tres" id="5_aflda"]
 [ext_resource type="PackedScene" uid="uid://dopgg30xff0kv" path="res://Scenes/geSprites/campfire.tscn" id="5_x6xhs"]
+[ext_resource type="PackedScene" uid="uid://bmp23taw1num7" path="res://Scenes/geSprites/knife.tscn" id="10_rj711"]
 [ext_resource type="PackedScene" uid="uid://f30obpn86t1k" path="res://Scenes/geSprites/door.tscn" id="10_wm0e3"]
 [ext_resource type="PackedScene" uid="uid://n45etn15jn3r" path="res://Scenes/geSprites/stairs.tscn" id="11_7de7o"]
 
@@ -21,6 +22,7 @@ background_mode = 2
 sky = SubResource("Sky_mf6g2")
 tonemap_mode = 2
 glow_enabled = true
+fog_enabled = true
 fog_light_color = Color(0.163712, 0.181478, 0.209408, 1)
 fog_density = 0.04
 fog_sky_affect = 0.85
@@ -47,6 +49,7 @@ cell_center_y = false
 data = {
 "cells": PackedInt32Array(65528, 65528, 0, 65531, 65524, 0, 0, 65524, 0, 65534, 65517, 0, 65521, 65535, 0, 65535, 31, 0, 65517, 28, 0, 65521, 65529, 0, 65524, 65523, 0, 65529, 65520, 0, 65528, 8, 0, 3, 65514, 0, 65530, 65506, 0, 65511, 65501, 0, 65506, 65528, 0, 65520, 65493, 0, 65510, 65516, 0, 65496, 65509, 0, 65513, 65526, 0, 65497, 65530, 0, 65504, 65520, 0, 65517, 65511, 0, 15, 65496, 0, 9, 65487, 0, 3, 65489, 0, 5, 65450, 0, 10, 65450, 0, 20, 65449, 0, 25, 65463, 0, 13, 65463, 0, 15, 65442, 0, 31, 65437, 0, 65535, 65467, 0, 18, 65470, 0, 14, 65481, 0, 65530, 65479, 0, 65521, 65473, 0, 65525, 65484, 0, 65512, 65485, 0, 65510, 6, 0, 65520, 18, 0, 7, 21, 0, 23, 18, 0, 15, 15, 0, 14, 25, 0, 65527, 25, 0, 65532, 20, 0, 1, 23, 0, 13, 21, 0, 65529, 15, 0, 65523, 13, 0, 65517, 11, 0, 65515, 8, 0, 65513, 2, 0, 65516, 65533, 0, 65519, 4, 0, 65517, 65528, 0, 65508, 0, 0, 65512, 13, 0, 65515, 19, 0, 65507, 14, 0, 65510, 23, 0, 65503, 9, 0, 65505, 4, 0, 128, 65496, 0, 130, 65455, 0, 103, 65458, 0, 144, 65460, 0, 129, 65463, 0, 154, 65463, 0, 139, 65470, 0, 146, 65478, 0, 154, 65469, 0, 139, 65479, 0, 148, 65485, 0, 137, 65485, 0, 141, 65498, 0, 138, 65491, 0, 118, 65457, 0, 117, 65450, 0, 127, 65470, 0, 99, 65452, 0, 133, 65474, 0, 133, 65502, 0, 138, 65506, 0, 131, 65508, 0, 133, 65512, 0, 123, 65514, 0, 125, 65518, 0, 120, 65517, 0, 106, 65520, 0, 108, 65523, 0, 99, 65523, 0, 97, 65518, 0, 97, 65521, 0, 92, 65513, 0, 89, 65518, 0, 111, 65448, 0, 95, 65460, 0, 89, 65458, 0, 82, 65466, 0, 80, 65463, 0, 77, 65473, 0, 71, 65472, 0, 92, 65524, 0, 37, 65479, 0, 58, 65457, 0)
 }
+metadata/_editor_floor_ = Vector3(-14, 0, 0)
 
 [node name="Foliage" type="GridMap" parent="."]
 mesh_library = ExtResource("4_80hus")
@@ -62,5 +65,8 @@ transform = Transform3D(0.363983, 9.30659e-10, -0.931406, -0.066431, 0.997453, -
 [node name="stairs-wood2" parent="." instance=ExtResource("11_7de7o")]
 transform = Transform3D(-0.371016, 0.000787922, 0.928626, 0.071224, 0.997078, 0.0276103, -0.925891, 0.0763843, -0.369988, 100.032, 3.05816, -44.1495)
 
-[node name="campfire2" parent="." instance=ExtResource("5_x6xhs")]
+[node name="campfire" parent="." instance=ExtResource("5_x6xhs")]
 transform = Transform3D(0.879261, -0.0382832, -0.4748, 0.0336856, 0.999267, -0.0181902, 0.475148, 0, 0.879906, 0.184341, 0.0463659, -0.523539)
+
+[node name="knife" parent="." instance=ExtResource("10_rj711")]
+transform = Transform3D(0.997819, 0, 0, 0, 0.997819, 0, 0, 0, 0.997819, 50.6065, 1.11344, 54.9213)

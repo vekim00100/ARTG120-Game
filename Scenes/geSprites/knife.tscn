@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmp23taw1num7"]
+
+[ext_resource type="Texture2D" uid="uid://dk1dpbl813ewq" path="res://assets/Textures/ground.png" id="1_abs6f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3er43"]
+size = Vector3(0.0791016, 0.149426, 0.717285)
+
+[sub_resource type="PrismMesh" id="PrismMesh_nwmqr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4tr50"]
+albedo_color = Color(1, 0.72, 0.72, 1)
+albedo_texture = ExtResource("1_abs6f")
+
+[sub_resource type="BoxMesh" id="BoxMesh_km6gt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qf3ym"]
+albedo_color = Color(0.303233, 0.303233, 0.303233, 1)
+
+[node name="knife" type="Node3D"]
+transform = Transform3D(0.997819, 0, 0, 0, 0.997819, 0, 0, 0, 0.997819, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1.00001, 0, 0, 0, 1.00001, 0, 0, 0, 1.00001, -0.00357391, -0.0143141, -0.207222)
+shape = SubResource("BoxShape3D_3er43")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.112144, -0.0735948, 3.70216e-09, -4.96173e-09, 9.087e-16, -0.0857281, 0.0175653, -0.46986, -5.79875e-10, -0.0215681, 0.0111727, -0.309698)
+mesh = SubResource("PrismMesh_nwmqr")
+surface_material_override/0 = SubResource("StandardMaterial3D_4tr50")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0652501, 0, 0, 0, 0.0581352, 0, 0, 0, 0.313623, 0, 0.00979209, 0)
+mesh = SubResource("BoxMesh_km6gt")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_qf3ym")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.568627, 0.0117647, 0.0117647, 1)
+light_energy = 3.0
+omni_range = 10.0
